@@ -20,7 +20,9 @@
     "joi": "^17.12.1",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.1.1",
+    "multer": "^1.4.5-lts.1",
     "nodemon": "^3.0.3",
+    "path": "^0.12.7",
     "stripe": "^14.16.0"
   }
 }

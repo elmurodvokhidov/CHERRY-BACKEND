@@ -15,7 +15,7 @@ const productSchema = new mongoose.Schema(
             required: true
         },
         category: {
-            type: Array
+            type: String
         },
         color: {
             type: String,

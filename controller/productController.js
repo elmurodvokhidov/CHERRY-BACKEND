@@ -100,7 +100,7 @@ function validateProduct(product) {
         img: Joi.string().required(),
         description: Joi.string().required(),
         price: Joi.number().required(),
-        category: Joi.array(),
+        category: Joi.string(),
         color: Joi.string(),
         discount: Joi.number(),
         inStock: Joi.boolean()
