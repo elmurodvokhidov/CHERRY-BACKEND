@@ -5,7 +5,7 @@ import Joi from "joi";
 
 export const register = async (req, res) => {
     try {
-        const { fName, lName, email, password, avatar } = req.body;
+        const { fName, lName, email, password, avatar, isAdmin } = req.body;
         if (!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) return res.status(400).json({ message: "Email manzili yaroqsiz!" });
 
         // Kiritilgan email manzilini bazadan tekshirish
@@ -21,7 +21,8 @@ export const register = async (req, res) => {
             lName,
             email,
             password: hashedPassword,
-            avatar
+            avatar,
+            isAdmin
         });
 
         // Yangi faoydalanuvchini bazaga saqlash
@@ -58,7 +59,7 @@ export const login = async (req, res) => {
                 isAdmin: existingUser.isAdmin
             },
             process.env.JWT_KEY,
-            { expiresIn: "5d" }
+            { expiresIn: "25d" }
         );
 
         // Login bo'lgan foydalanuvchini va token qaytarish
